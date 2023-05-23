@@ -1,0 +1,19 @@
+<body>
+    <div class="toolbar">
+    <span>Bienvenido/a al programa de conversión</span>
+</div>
+<div >
+    <form class="content" (ngSubmit)=  "onSubmit()">
+        Ingrese temperatura en Celsius: 
+    <input type="number" class="selection" [(ngModel)]="celsius"><br>
+
+        <button type="submit" class="button" >Enviar</button>
+    </form>
+</div>
+
+<div class="content2">
+    El resultado en Fahrenheit es:   
+    <input class="result" [(ngModel)]="fahrenheit">
+</div>
+  <!-- <p>El resultado es {{ fahrenheit }} Fahrenheit!</p>--> 
+    
