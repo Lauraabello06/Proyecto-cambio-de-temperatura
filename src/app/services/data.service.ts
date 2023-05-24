@@ -6,18 +6,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-//link donde traigo los datos
-  private API_DATOS =  'http://localhost:8000/urlTemperature/';
-  
+  private API_DATOS = 'http://localhost:8000/urlTemperature/';
+
   constructor(private http: HttpClient) { }
 
-  //Petición get
-  public getAllCelsius(): Observable<any>{
-    return this.http.get(this.API_DATOS)
+  public getAllCelsius(): Observable<any> {
+    return this.http.get(this.API_DATOS);
   }
 
-  //Peticion Post
-  public saveDatos (celsius:any): Observable<any>{
-    return this.http.post(this.API_DATOS,celsius);
+  public saveDatos(celsius: number): Observable<any> {
+    const data = { celsius: celsius };
+    return this.http.post(this.API_DATOS, data);
   }
 }
